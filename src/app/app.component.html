@@ -1,0 +1,11 @@
+<app-navbar [class]="{'app-navbar-active': this.navState.isNavActive}"></app-navbar>
+
+<main [class]="{'blurred': this.navState.isNavActive}">
+  <h1 class="main-heading">
+    <a href="/">
+      <span class="main-heading--text">Raze of Braze</span>
+    </a>
+  </h1>
+  <router-outlet></router-outlet>
+</main>
+<div (click)="this.navState.setNavState = false" [class]="{'shadow': true, 'on': this.navState.isNavActive}"></div>

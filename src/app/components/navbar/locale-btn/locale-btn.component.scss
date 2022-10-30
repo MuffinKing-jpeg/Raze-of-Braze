@@ -1,0 +1,48 @@
+@use "../../../../scss/common/presets/variables" as *;
+
+.locale-container {
+  font-size: 1.25rem;
+  font-weight: inherit;
+  padding: $gap-sm;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  i {
+    margin-right: 10px;
+  }
+}
+
+.locale {
+  display: flex;
+  justify-content: center;
+  gap: $gap;
+  padding-inline-start: 0;
+  margin: 0;
+
+  &__item {
+    padding-inline-start: 0;
+    transition: var(--transition);
+    border-radius: 0.25rem;
+
+    button {
+      text-transform: uppercase;
+      border: 0 transparent;
+      margin: 0;
+      padding: calc($gap-sm/2);
+      background: transparent;
+      color: inherit;
+    }
+
+    &::marker {
+      content: none;
+    }
+    &:hover {
+      background-color: var(--bg-secondary);
+      color: var(--ico);
+    }
+    &--active {
+      background-color: var(--bg-secondary);
+      color: var(--text-secondary);
+    }
+  }
+}

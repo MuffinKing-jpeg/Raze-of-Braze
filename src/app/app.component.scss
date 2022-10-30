@@ -1,0 +1,71 @@
+@use '../scss/common/presets/variables' as *;
+@use '../scss/common/mixin/mixin-media' as *;
+
+app-navbar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  width: 280px;
+  z-index: 10;
+  transition: var(--transition),
+  left calc(var(--transition-speed) * 1.5) ease-in-out;
+  left: calc(280px * (-1));
+}
+
+.app-navbar-active {
+  left: 0;
+}
+
+.shadow {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+
+  &.on {
+    display: block;
+    //background-color: var(--shader-90);
+  }
+
+}
+
+main {
+  padding-top: $gap-sm;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 100vh;
+  transition: filter calc(var(--transition-speed) * 1.5) ease-in-out;
+  width: 100%;
+  padding-bottom: $gap-x2;
+
+  &.blurred {
+    filter: grayscale(1) brightness(0.8);
+  }
+}
+
+
+.main-heading {
+  &--text {
+    padding-left: $gap-sm;
+  }
+
+  @include lg-min {
+    font-size: 2.25rem;
+  }
+
+  @include lg-md {
+    font-size: 1.75rem;
+  }
+
+  @include md {
+    font-size: 1.25rem;
+  }
+
+}

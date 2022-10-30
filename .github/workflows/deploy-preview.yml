@@ -1,0 +1,19 @@
+name: Deploy to Preview Channel
+
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  build_and_preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm i && npm run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_RAZE-OF-BRAZE }}"
+          expires: 30d
+          projectId: lw-status
+          channelId: dev

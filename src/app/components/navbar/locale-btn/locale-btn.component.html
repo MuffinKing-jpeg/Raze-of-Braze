@@ -1,0 +1,10 @@
+<div class="locale-container">
+    <span><i class="fa-solid fa-language"></i><span i18n>Language</span></span>
+
+    <ul class="locale">
+        <li [class]="{'locale__item': true, 'locale__item--active': this.locale.activeLocale === item}" *ngFor="let item of this.localeList;index as i" (click)="locale.changeLocale(item ? item : '')">
+            <button>{{item}}</button>
+        </li>
+    </ul>
+</div>
+
