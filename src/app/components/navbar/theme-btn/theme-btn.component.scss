@@ -1,8 +1,10 @@
-@use '../../../../scss/common/presets/index' as *;
+@use '../../../../scss/common/presets/variables' as *;
 
 .theme-btn {
   color: var(--text-primary);
   transition: var(--transition);
+  background-color: transparent;
+  border: none;
   font-size: 1.25em;
   padding: $gap-sm;
   width: 100%;

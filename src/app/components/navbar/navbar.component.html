@@ -11,7 +11,7 @@
         class="nav-item__text" i18n>Main page</span></button>
     </li>
     <li [class]="{'nav-item': true,
-    'nav-active': this.navState.currentPath === '/log'}">
+    'nav-active': this.navState.currentPath === '/login'}">
       <button routerLink="/log"><span class="nav-item__ico"><i class="fa-regular fa-calendar-days"></i></span><span
         class="nav-item__text" i18n>Login</span></button>
     </li>
@@ -20,6 +20,7 @@
   <app-theme-btn></app-theme-btn>
   <div class="social">
     <a class="btn" href="https://discord.gg/YrxREuV"><i class="socialBtn fab fa-discord svg-fa"></i></a>
+    <a class="btn" href="https://t.me/raze_of_braze"><i class="socialBtn fab fa-telegram svg-fa"></i></a>
     <a class="btn" href="https://github.com/MuffinKing-jpeg"><i class="socialBtn fab fa-github svg-fa"></i></a>
   </div>
 </div>
