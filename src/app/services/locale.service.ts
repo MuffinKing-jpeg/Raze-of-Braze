@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {LocaleInterface} from "../interfaces/locale.interface";
-import {timeout} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -16,15 +15,17 @@ export class LocaleService {
     if (localStorage.getItem('locale')) {
       const storagePath = localStorage.getItem('locale')
       switch (storagePath) {
-        case  'en' || 'ru' || 'ua':
+        case 'ua':
+        case 'ru':
+        case 'en':
           if (storagePath !== currentPath) this.changeLocale(storagePath)
           this.activeLocale = storagePath
           break;
         default:
           setTimeout(()=>{
-            localStorage.removeItem('locale')
             this.getLocale()
           },100)
+          break;
       }
     }
 
@@ -41,11 +42,12 @@ export class LocaleService {
     }
   }
 
-  changeLocale(loc: string): void {
-    if (loc !== '') {
+  changeLocale(loc?: string): void {
+    if (loc) {
       localStorage.setItem('locale', loc)
       const pathname = window.location.pathname.replace(/^\/\w+/, loc)
       const url = new URL(window.location.href)
+      console.log(localStorage.getItem('locale'))
       url.pathname = pathname
         window.location.replace(url)
     }
