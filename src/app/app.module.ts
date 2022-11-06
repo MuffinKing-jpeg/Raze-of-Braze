@@ -9,6 +9,7 @@ import {NavbarComponent} from './components/navbar/navbar.component';
 import {PlaceholderComponent} from './components/placeholder/placeholder.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import { LocaleBtnComponent } from './components/navbar/locale-btn/locale-btn.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LocaleBtnComponent } from './components/navbar/locale-btn/locale-btn.co
     NavbarComponent,
     PlaceholderComponent,
     NotFoundComponent,
-    LocaleBtnComponent
+    LocaleBtnComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

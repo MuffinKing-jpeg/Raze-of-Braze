@@ -11,9 +11,9 @@
         class="nav-item__text" i18n>Main page</span></button>
     </li>
     <li [class]="{'nav-item': true,
-    'nav-active': this.navState.currentPath === '/login'}">
-      <button routerLink="/log"><span class="nav-item__ico"><i class="fa-regular fa-calendar-days"></i></span><span
-        class="nav-item__text" i18n>Login</span></button>
+    'nav-active': this.navState.currentPath === '/admin'}">
+      <button routerLink="/admin"><span class="nav-item__ico"><i class="fa-regular fa-calendar-days"></i></span><span
+        class="nav-item__text" i18n>Control panel</span></button>
     </li>
   </ul>
   <app-locale-btn></app-locale-btn>

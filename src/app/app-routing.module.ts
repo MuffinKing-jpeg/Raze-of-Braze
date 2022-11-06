@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-
-import {PlaceholderComponent} from "./components/placeholder/placeholder.component";
-import {NotFoundComponent} from "./components/not-found/not-found.component";
-
 const routes: Routes = [
-  {path: '', component: PlaceholderComponent},
-  {path: 'login', component: PlaceholderComponent},
-  {path: 'admin', component: PlaceholderComponent},
+  {
+    path: '',
+    loadChildren: () => import('./modules/main-page.module')
+        .then(m => m.MainPageModule)
+  },
+  {path: 'admin',loadChildren: () => import('./modules/placeholder.module')
+    .then(m => m.PlaceholderModule)},
 
   //Default route
   // {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   //404 route
-  {path: '404', component: NotFoundComponent},
-  {path: '**', component: NotFoundComponent, pathMatch: 'full'}
+  {path: '404', loadChildren: () => import('./modules/not-found.module')
+        .then(m => m.NotFoundModule)},
+  {path: '**', loadChildren: () => import('./modules/not-found.module')
+        .then(m => m.NotFoundModule),
+    pathMatch: 'full'}
 ];
 
 @NgModule({
